@@ -56,10 +56,10 @@ def main():
     a= np.reshape(x, (20081, 1642*22))
     print(a.shape)
 
-    matrixSeqByChar = np.transpose(a[:20000])
-    matrixDot = np.dot(a[:20000], matrixSeqByChar)
+    matrixSeqByChar = np.transpose(a)
+    matrixDot = np.dot(a, matrixSeqByChar)
     matrixHammings = len(listSeq[0]) - matrixDot
-    np.save("./hammings20000.npy", matrixHammings)
+    np.save("./hammings.npy", matrixHammings)
 
     # print(matrixHammings.flatten())
     # print(len(matrixHammings))
