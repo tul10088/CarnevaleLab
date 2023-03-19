@@ -10,5 +10,13 @@ data_list = [(row['Entry'], row['Protein names']) for index, row in df.iterrows(
 # print the list
 print(data_list)
 
+groups = []
+uniquekeys = []
+for k, g in groupby(data, lambda x: x[1]):
+    groups.append(list(g))      # Store group iterator as a list
+    uniquekeys.append(k)
+
+#print(groups)
+
 startTime = timeit.default_timer()
 print("This algorithm takes: " + str(timeit.default_timer() - startTime) + " seconds")
